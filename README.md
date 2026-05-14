@@ -72,3 +72,4 @@ export default defineConfig([
 ])
 ```
 "# vexora" 
+"# VEXORA_" 
