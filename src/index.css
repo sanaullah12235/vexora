@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0B0F1A;
+  --color-secondary: #111827;
+  --color-primary: #6C5CE7;
+  --color-accent: #00D4FF;
+  --color-whiteText: #FFFFFF;
+  --color-grayText: #BFC8D6;
+  
+  --background-image-glow-purple: radial-gradient(circle, rgba(108,92,231,0.3) 0%, rgba(108,92,231,0) 70%);
+  --background-image-glow-cyan: radial-gradient(circle, rgba(0,212,255,0.3) 0%, rgba(0,212,255,0) 70%);
+  
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-whiteText font-sans;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-whiteText tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-glass transition-all duration-300;
+  }
+
+  .glow-purple {
+    @apply absolute -z-10 bg-primary/20 blur-[120px] rounded-full;
+  }
+
+  .glow-cyan {
+    @apply absolute -z-10 bg-accent/20 blur-[120px] rounded-full;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 bg-transparent border border-white/20 hover:bg-white/5 text-white font-semibold rounded-full transition-all duration-300 active:scale-95;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary;
+  background-size: 200% auto;
+  animation: gradient 8s linear infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
