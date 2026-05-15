@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
 import { Calendar as CalendarIcon, Clock, Video, CheckCircle2, ArrowRight } from 'lucide-react';
 

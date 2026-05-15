@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { CircuitBoard } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';

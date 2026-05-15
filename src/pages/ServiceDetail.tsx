@@ -1,8 +1,7 @@
-import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { Section, FadeIn, GlassCard, Glow, Accordion } from '../components/UI';
 import { servicesData } from '../data/services';
-import { CheckCircle2, ArrowLeft, ArrowRight, Zap, Shield, Cpu, Target } from 'lucide-react';
+import { CheckCircle2, ArrowLeft, Zap, Cpu, Target } from 'lucide-react';
 
 const ServiceDetail = () => {
   const { slug } = useParams();

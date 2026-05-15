@@ -1,6 +1,5 @@
-import React from 'react';
 import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
-import { Calendar, User, ArrowRight, Search as SearchIcon, Mail, TrendingUp } from 'lucide-react';
+import { ArrowRight, Search as SearchIcon, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const posts = [

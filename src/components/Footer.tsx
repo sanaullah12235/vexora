@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CircuitBoard, Code2, Globe, Briefcase, Mail } from 'lucide-react';
 

@@ -1,9 +1,16 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect, type ReactNode } from 'react';
 
-export const FadeIn = ({ children, delay = 0, direction = 'up', distance = 20 }: { children: React.ReactNode, delay?: number, direction?: 'up' | 'down' | 'left' | 'right', distance?: number }) => {
+interface FadeInProps {
+  children: ReactNode;
+  delay?: number;
+  direction?: 'up' | 'down' | 'left' | 'right';
+  distance?: number;
+  className?: string;
+}
+
+export const FadeIn = ({ children, delay = 0, direction = 'up', distance = 20, className = '' }: FadeInProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -31,13 +38,14 @@ export const FadeIn = ({ children, delay = 0, direction = 'up', distance = 20 }:
         delay, 
         ease: [0.21, 0.47, 0.32, 0.98] 
       }}
+      className={className}
     >
       {children}
     </motion.div>
   );
 };
 
-export const GlassCard = ({ children, className = '' }: { children: React.ReactNode, className?: string }) => {
+export const GlassCard = ({ children, className = '' }: { children: ReactNode, className?: string }) => {
   return (
     <div className={`glass-card p-8 group hover:border-primary/30 ${className}`}>
       {children}
@@ -45,7 +53,7 @@ export const GlassCard = ({ children, className = '' }: { children: React.ReactN
   );
 };
 
-export const Section = ({ children, className = '', id = '' }: { children: React.ReactNode, className?: string, id?: string }) => {
+export const Section = ({ children, className = '', id = '' }: { children: ReactNode, className?: string, id?: string }) => {
   return (
     <section id={id} className={`py-24 px-6 relative overflow-hidden ${className}`}>
       {children}
@@ -60,7 +68,7 @@ export const Glow = ({ color = 'purple', className = '' }: { color?: 'purple' | 
 };
 
 export const Accordion = ({ items }: { items: { q: string, a: string }[] }) => {
-  const [openIndex, setOpenIndex] = React.useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <div className="space-y-4">
@@ -99,13 +107,13 @@ export const Accordion = ({ items }: { items: { q: string, a: string }[] }) => {
 };
 
 export const Counter = ({ value, duration = 2 }: { value: string, duration?: number }) => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
   const target = parseInt(value.replace(/\D/g, ''));
   const suffix = value.replace(/[0-9]/g, '');
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isInView) {
       let start = 0;
       const end = target;

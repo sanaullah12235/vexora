@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
-import { ExternalLink, Code2, Eye, ArrowRight, Smartphone, Globe, Layers, Layout } from 'lucide-react';
+import { Eye, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 

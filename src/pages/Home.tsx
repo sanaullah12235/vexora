@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
@@ -9,8 +8,6 @@ import {
   Search, 
   Settings, 
   CheckCircle2,
-  Lock,
-  BarChart3,
   Zap,
   Rocket,
   Shield,
@@ -25,7 +22,7 @@ import {
   Layout,
   Star
 } from 'lucide-react';
-import { Section, FadeIn, GlassCard, Glow, Counter, Accordion } from '../components/UI';
+import { Section, FadeIn, GlassCard, Glow, Accordion } from '../components/UI';
 import { Link } from 'react-router-dom';
 import BrandSlider from '../components/BrandSlider';
 import PremiumReviews from '../components/PremiumReviews';
@@ -219,7 +216,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <FadeIn>
-              <h2 className="text-4xl lg:text-5xl font-bold">Comprehensive <span className="text-gradient">Digital Services</span></h2>
+              <h2 className="text-5xl lg:text-6xl font-bold">Comprehensive <span className="text-gradient">Digital Services</span></h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-grayText max-w-2xl mx-auto text-lg leading-relaxed">We offer a wide range of premium services tailored to your business needs.</p>
@@ -257,7 +254,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <FadeIn>
-              <h2 className="text-4xl lg:text-7xl font-black mb-6 tracking-tighter">Why Work With <span className="text-gradient italic">VEXORA?</span></h2>
+              <h2 className="text-5xl lg:text-6xl font-black mb-6 tracking-tighter">Why Work With <span className="text-gradient italic">VEXORA?</span></h2>
               <p className="text-xl text-grayText max-w-3xl mx-auto leading-relaxed font-medium">
                 We combine strategy, design, and development to build digital experiences that help businesses grow.
               </p>
@@ -293,7 +290,7 @@ const Home = () => {
         <div className="text-center mb-16">
           <FadeIn>
             <span className="text-accent font-bold tracking-[0.4em] uppercase text-xs mb-4 block">WHAT OUR CLIENTS SAY</span>
-            <h2 className="text-4xl lg:text-7xl font-black italic tracking-tighter">GUEST <span className="text-gradient">EXPERIENCES</span></h2>
+            <h2 className="text-5xl lg:text-6xl font-black italic tracking-tighter">GUEST <span className="text-gradient">EXPERIENCES</span></h2>
             <p className="text-grayText mt-6 max-w-2xl mx-auto text-lg leading-relaxed">Don't just take our word for it. Hear from the brands we've helped grow.</p>
           </FadeIn>
         </div>
@@ -305,7 +302,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <FadeIn>
-              <h2 className="text-4xl lg:text-7xl font-black mb-6 tracking-tighter italic">Simple <span className="text-gradient">Pricing</span></h2>
+              <h2 className="text-5xl lg:text-6xl font-black mb-6 tracking-tighter italic">Simple <span className="text-gradient">Pricing</span></h2>
               <p className="text-xl text-grayText max-w-3xl mx-auto leading-relaxed">
                 Choose the package that fits your business.
               </p>
@@ -365,13 +362,28 @@ const Home = () => {
         </div>
       </Section>
 
+      {/* FAQ Section */}
+      <Section className="bg-background">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+             <FadeIn>
+                <h2 className="text-5xl lg:text-6xl font-bold">Common <span className="text-gradient">Questions</span></h2>
+                <p className="text-grayText mt-4">Everything you need to know about working with VEXORA.</p>
+             </FadeIn>
+          </div>
+          <FadeIn delay={0.2}>
+            <Accordion items={faqs} />
+          </FadeIn>
+        </div>
+      </Section>
+
       {/* NEW: Contact Section on Home Page */}
       <Section id="contact" className="overflow-visible bg-background relative">
         <Glow color="cyan" className="w-[800px] h-[800px] -bottom-40 -right-40 opacity-10" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <FadeIn>
-              <h2 className="text-4xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">Let’s Build Something <br /><span className="text-gradient italic">Amazing</span></h2>
+              <h2 className="text-5xl lg:text-6xl font-black mb-8 tracking-tighter leading-[0.9]">Let’s Build Something <br /><span className="text-gradient italic">Amazing</span></h2>
               <p className="text-xl lg:text-2xl text-grayText max-w-3xl mx-auto leading-relaxed font-medium">
                 Tell us about your project and we’ll help bring it to life.
               </p>
@@ -417,7 +429,7 @@ const Home = () => {
             {/* Premium Form */}
             <div className="lg:col-span-2">
               <FadeIn direction="left">
-                <GlassCard className="p-10 lg:p-16 border-white/10 bg-white/[0.02] backdrop-blur-3xl relative overflow-hidden">
+                <GlassCard className="max-w-4xl mx-auto p-8 lg:p-12 border-white/10 bg-white/[0.02] backdrop-blur-3xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 blur-[100px] -z-10" />
                   <form className="grid md:grid-cols-2 gap-8" onSubmit={(e) => e.preventDefault()}>
                     <div className="space-y-3">

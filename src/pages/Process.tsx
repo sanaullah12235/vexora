@@ -1,5 +1,4 @@
-import React from 'react';
-import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
+import { Section, FadeIn, Glow } from '../components/UI';
 import { 
   Search, 
   Lightbulb, 

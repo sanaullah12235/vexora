@@ -1,4 +1,3 @@
-import React from 'react';
 import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
 import { servicesData } from '../data/services';
 import { Link } from 'react-router-dom';

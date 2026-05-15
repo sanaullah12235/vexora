@@ -1,4 +1,3 @@
-import React from 'react';
 import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
 import { Check, Zap, Rocket, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';

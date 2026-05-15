@@ -1,10 +1,7 @@
-import React from 'react';
 import { Section, FadeIn, GlassCard, Glow } from '../components/UI';
 import { 
-  History, 
   Target, 
   Eye, 
-  Heart, 
   Award, 
   Users2, 
   Briefcase, 
