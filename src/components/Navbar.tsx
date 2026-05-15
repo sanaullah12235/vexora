@@ -96,22 +96,27 @@ const Navbar = () => {
             <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[40%] bg-primary/10 blur-[120px] rounded-full -z-10" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[40%] bg-accent/10 blur-[120px] rounded-full -z-10" />
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.08, duration: 0.5, ease: "easeOut" }}
                 >
                   <NavLink
                     to={link.path}
                     className={({ isActive }) => 
-                      `text-3xl font-black uppercase tracking-tighter transition-colors flex items-center justify-between group ${isActive ? 'text-accent' : 'text-white/40'}`
+                      `relative flex items-end gap-4 group transition-all duration-300 ${isActive ? 'text-accent' : 'text-white'}`
                     }
                   >
-                    {link.name}
-                    <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />
+                    <span className="text-xs font-black text-white/20 mb-2 group-hover:text-accent/40 transition-colors tracking-[0.2em]">
+                      0{i + 1}
+                    </span>
+                    <span className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none group-hover:italic group-hover:translate-x-2 transition-all duration-500">
+                      {link.name}
+                    </span>
+                    <div className="h-[2px] w-0 group-hover:w-12 bg-accent transition-all duration-500 mb-2" />
                   </NavLink>
                 </motion.div>
               ))}
@@ -119,12 +124,12 @@ const Navbar = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="pt-10 mt-6 border-t border-white/5"
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="pt-8 mt-4 border-t border-white/5"
               >
-                <Link to="/consultation" className="btn-primary w-full py-5 text-center text-lg flex items-center justify-center gap-3">
+                <Link to="/consultation" className="btn-primary w-full py-5 text-center text-lg flex items-center justify-center gap-3 shadow-2xl shadow-primary/20">
                   Get Free Quote
-                  <ArrowRight size={20} />
+                  <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
             </div>
