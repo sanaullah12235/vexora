@@ -1,19 +1,38 @@
-import { motion } from 'framer-motion';
-import { CircuitBoard } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CircuitBoard, Menu, X, ArrowRight } from 'lucide-react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Process', path: '/process' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <motion.nav 
@@ -21,7 +40,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between bg-background/80 backdrop-blur-md border-b border-white/5"
     >
-      <Link to="/" className="flex items-center gap-2 group">
+      {/* Logo */}
+      <Link to="/" className="flex items-center gap-2 group z-50">
         <div className="relative">
           <CircuitBoard className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-300" />
           <motion.div 
@@ -33,13 +53,14 @@ const Navbar = () => {
         <span className="text-2xl font-bold tracking-tighter text-white">VEXORA</span>
       </Link>
 
+      {/* Desktop Links */}
       <div className="hidden lg:flex items-center gap-8">
         {navLinks.map((link) => (
           <NavLink
             key={link.name}
             to={link.path}
             className={({ isActive }) => 
-              `text-sm font-medium transition-colors hover:text-accent ${isActive ? 'text-accent' : 'text-grayText'}`
+              `text-sm font-bold uppercase tracking-widest transition-colors hover:text-accent ${isActive ? 'text-accent' : 'text-white/60'}`
             }
           >
             {link.name}
@@ -47,9 +68,69 @@ const Navbar = () => {
         ))}
       </div>
 
-      <Link to="/consultation" className="btn-primary py-2 px-6 text-sm">
-        Get Free Quote
-      </Link>
+      {/* Desktop CTA + Hamburger */}
+      <div className="flex items-center gap-4">
+        <Link to="/consultation" className="hidden sm:inline-flex btn-primary py-2 px-6 text-sm">
+          Get Free Quote
+        </Link>
+        
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden z-50 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white hover:border-primary/50 transition-colors"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-0 top-0 left-0 w-full h-screen bg-background z-40 flex flex-col pt-32 px-10"
+          >
+            {/* Background Glows for Mobile Menu */}
+            <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[40%] bg-primary/10 blur-[120px] rounded-full -z-10" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[40%] bg-accent/10 blur-[120px] rounded-full -z-10" />
+
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) => 
+                      `text-3xl font-black uppercase tracking-tighter transition-colors flex items-center justify-between group ${isActive ? 'text-accent' : 'text-white/40'}`
+                    }
+                  >
+                    {link.name}
+                    <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />
+                  </NavLink>
+                </motion.div>
+              ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="pt-10 mt-6 border-t border-white/5"
+              >
+                <Link to="/consultation" className="btn-primary w-full py-5 text-center text-lg flex items-center justify-center gap-3">
+                  Get Free Quote
+                  <ArrowRight size={20} />
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
