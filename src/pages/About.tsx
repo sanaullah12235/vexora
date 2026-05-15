@@ -29,7 +29,7 @@ const About = () => {
           <FadeIn direction="right">
             <GlassCard className="h-full border-primary/20 bg-primary/5">
               <Target className="text-primary w-12 h-12 mb-6" />
-              <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
+              <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-grayText text-lg leading-relaxed">
                 To empower businesses through cutting-edge digital solutions that drive growth, foster innovation, and create meaningful user experiences.
               </p>
@@ -38,7 +38,7 @@ const About = () => {
           <FadeIn direction="left" delay={0.2}>
             <GlassCard className="h-full border-accent/20 bg-accent/5">
               <Eye className="text-accent w-12 h-12 mb-6" />
-              <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
+              <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
               <p className="text-grayText text-lg leading-relaxed">
                 To be the global benchmark for digital excellence, where technology meets artistry to shape the future of the internet.
               </p>
@@ -92,7 +92,8 @@ const About = () => {
                   <div className="relative h-64 overflow-hidden">
                     <img 
                       src={member.img} 
-                      alt={member.name} 
+                      alt={`${member.name} - ${member.role} at VEXORA`} 
+                      loading="lazy"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />

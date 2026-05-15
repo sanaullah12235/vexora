@@ -116,12 +116,16 @@ const Portfolio = () => {
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <img 
                         src={project.image} 
-                        alt={project.title} 
+                        alt={`${project.title} - ${project.category} project by VEXORA`} 
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
                       />
                       
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-md flex flex-col justify-center items-center text-center p-12 translate-y-4 group-hover:translate-y-0">
+                      {/* Hover Overlay - Now the entire overlay is a Link to fix single-click navigation */}
+                      <Link 
+                        to="/contact" 
+                        className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-md flex flex-col justify-center items-center text-center p-12 translate-y-4 group-hover:translate-y-0 z-20 cursor-pointer"
+                      >
                          <span className="text-accent font-black tracking-widest text-[10px] uppercase mb-4">{project.category}</span>
                          <h3 className="text-4xl font-bold mb-4 tracking-tight">{project.title}</h3>
                          <p className="text-grayText text-lg leading-relaxed mb-8 max-w-sm">{project.desc}</p>
@@ -133,14 +137,14 @@ const Portfolio = () => {
                          </div>
 
                          <div className="flex gap-4">
-                            <button className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg shadow-primary/20">
+                            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg shadow-primary/20">
                                <Eye size={24} />
-                            </button>
-                            <Link to="/contact" className="px-8 h-14 rounded-full border border-white/20 flex items-center justify-center font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-background transition-all">
+                            </div>
+                            <div className="px-8 h-14 rounded-full border border-white/20 flex items-center justify-center font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-background transition-all">
                                View Project
-                            </Link>
+                            </div>
                          </div>
-                      </div>
+                      </Link>
 
                       {/* Default Tag */}
                       <div className="absolute top-6 left-6 group-hover:opacity-0 transition-opacity">
@@ -173,7 +177,7 @@ const Portfolio = () => {
                    </Link>
                 </div>
                 <div className="h-[400px] lg:h-full order-1 lg:order-2 overflow-hidden">
-                   <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200" alt="Case Study" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                   <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200" alt="Nexus Data Hub Case Study - Enterprise Analytics by VEXORA" loading="lazy" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
                 </div>
              </div>
           </GlassCard>

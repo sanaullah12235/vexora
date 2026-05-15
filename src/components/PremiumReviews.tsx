@@ -65,7 +65,8 @@ const PremiumReviews = () => {
                 <div className="flex items-center gap-4 pt-6 border-t border-white/5">
                   <img 
                     src={review.image} 
-                    alt={review.name} 
+                    alt={`Testimonial from ${review.name} - VEXORA Client`} 
+                    loading="lazy"
                     className="w-14 h-14 rounded-full border-2 border-primary/30 object-cover"
                   />
                   <div>

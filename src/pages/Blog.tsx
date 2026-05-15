@@ -61,7 +61,7 @@ const Blog = () => {
           <FadeIn>
             <GlassCard className="p-0 overflow-hidden flex flex-col lg:flex-row h-full lg:h-[500px] border-primary/20 bg-primary/5">
               <div className="w-full lg:w-3/5 h-[300px] lg:h-auto overflow-hidden">
-                <img src={posts[0].image} alt="Featured" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={posts[0].image} alt={`Featured Article: ${posts[0].title} - VEXORA Insights`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="w-full lg:w-2/5 p-12 flex flex-col justify-center">
                  <div className="flex items-center gap-3 mb-6">
@@ -106,7 +106,8 @@ const Blog = () => {
                   <div className="h-64 overflow-hidden relative">
                     <img 
                       src={post.image} 
-                      alt={post.title} 
+                      alt={`${post.title} - ${post.category} insights by VEXORA`} 
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4">

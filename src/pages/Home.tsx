@@ -152,7 +152,8 @@ const Home = () => {
                    </div>
                    <img 
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" 
-                      alt="Dashboard Preview" 
+                      alt="VEXORA Dashboard - Premium Digital Solutions" 
+                      loading="lazy"
                       className="w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
                    />
                 </div>
@@ -165,7 +166,8 @@ const Home = () => {
                 >
                    <img 
                       src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=300" 
-                      alt="App Mockup" 
+                      alt="Mobile App Design by VEXORA" 
+                      loading="lazy"
                       className="w-full rounded-[1.7rem] aspect-[9/19] object-cover"
                    />
                 </motion.div>
