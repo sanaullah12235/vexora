@@ -11,7 +11,7 @@ const Consultation = () => {
         <Glow color="cyan" className="w-[600px] h-[600px] -top-20 left-1/2 -translate-x-1/2" />
         <FadeIn>
           <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">Let's Talk</span>
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6">Book a <span className="text-gradient">Free Consultation</span></h1>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6">Book a <span className="text-gradient">Free Consultation</span></h1>
           <p className="text-xl text-grayText max-w-2xl mx-auto">
             Ready to start your digital transformation? Schedule a 30-minute discovery call with our experts.
           </p>

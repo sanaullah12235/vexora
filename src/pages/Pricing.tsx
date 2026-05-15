@@ -60,7 +60,7 @@ const Pricing = () => {
         <Glow color="purple" className="w-[600px] h-[600px] -top-20 left-1/2 -translate-x-1/2 opacity-30" />
         <FadeIn>
           <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">INVEST IN EXCELLENCE</span>
-          <h1 className="text-6xl lg:text-8xl font-bold mb-6 tracking-tighter">Transparent <span className="text-gradient italic">Pricing</span></h1>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 tracking-tighter">Transparent <span className="text-gradient italic">Pricing</span></h1>
           <p className="text-xl text-grayText max-w-2xl mx-auto leading-relaxed">
             Premium quality at competitive rates. Choose the plan that best fits your business goals.
           </p>

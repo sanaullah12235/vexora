@@ -10,7 +10,7 @@ const Services = () => {
         <Glow color="purple" className="w-[600px] h-[600px] -top-20 left-1/2 -translate-x-1/2 opacity-30" />
         <FadeIn>
           <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">EXCELLENCE IN EXECUTION</span>
-          <h1 className="text-5xl lg:text-8xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 tracking-tighter">
             Premium <span className="text-gradient italic">Digital Services</span>
           </h1>
           <p className="text-xl text-grayText max-w-3xl mx-auto leading-relaxed">

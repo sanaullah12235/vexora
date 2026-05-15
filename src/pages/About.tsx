@@ -16,7 +16,7 @@ const About = () => {
         <Glow color="cyan" className="w-[500px] h-[500px] -top-20 left-1/4" />
         <FadeIn>
           <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">Our Story</span>
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6">Revolutionizing the <br /><span className="text-gradient">Digital Landscape</span></h1>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6">Revolutionizing the <br /><span className="text-gradient">Digital Landscape</span></h1>
           <p className="text-xl text-grayText max-w-3xl mx-auto leading-relaxed">
             VEXORA was born from a vision to bridge the gap between complex engineering and elegant design. We're a team of dreamers, thinkers, and builders.
           </p>

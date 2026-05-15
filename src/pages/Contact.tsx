@@ -17,7 +17,7 @@ const Contact = () => {
         <Glow color="purple" className="w-[600px] h-[600px] -top-20 left-1/2 -translate-x-1/2 opacity-20" />
         <FadeIn>
           <span className="text-accent font-black tracking-[0.4em] uppercase text-xs mb-4 block">GET IN TOUCH</span>
-          <h1 className="text-6xl lg:text-8xl font-black mb-6 tracking-tighter">Let's Build Something <br /><span className="text-gradient italic">Extraordinary</span></h1>
+          <h1 className="text-5xl lg:text-6xl font-black mb-6 tracking-tighter">Let's Build Something <br /><span className="text-gradient italic">Extraordinary</span></h1>
           <p className="text-xl text-grayText max-w-2xl mx-auto leading-relaxed">
             Ready to take your digital presence to the next level? Reach out today and let's discuss your vision.
           </p>

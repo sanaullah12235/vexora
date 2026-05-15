@@ -44,7 +44,7 @@ const Careers = () => {
         <Glow color="purple" className="w-[600px] h-[600px] -top-20 left-1/2 -translate-x-1/2" />
         <FadeIn>
           <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">Join Our Team</span>
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6">Let's Build the <span className="text-gradient">Future Together</span></h1>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6">Let's Build the <span className="text-gradient">Future Together</span></h1>
           <p className="text-xl text-grayText max-w-3xl mx-auto">
             We're looking for passionate, innovative, and driven individuals to join our mission in redefining digital excellence.
           </p>
